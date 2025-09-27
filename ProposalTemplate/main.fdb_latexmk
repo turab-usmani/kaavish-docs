@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1758973439.40417 "f:/Habib_University/FYP/kaavish-docs/ProposalTemplate/main.tex" "main.pdf" "main" 1758973442.29117 0
+["pdflatex"] 1758973580.17982 "f:/Habib_University/FYP/kaavish-docs/ProposalTemplate/main.tex" "main.pdf" "main" 1758973582.88749 0
   "C:/Users/DC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758959603 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/DC/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1707497491 11548 c66efe0ca5f4f02ce4c104ac18af8996 ""
   "C:/Users/DC/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1707497371 24211458 1270e047dfd8c46cdcd7f86fbd0737ad ""
@@ -76,11 +76,11 @@
   "C:/Users/DC/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty" 1698867131 12667 e4b5eb11e4b7239e6c8a52bbe074a6c6 ""
   "C:/Users/DC/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "HU_logo.png" 1758959422 54729 da24e642be5d68e70877715257f3bbdf ""
-  "cover.tex" 1758971333 1530 d84816e4486c1ab1c8cae7b60d4f574e ""
+  "cover.tex" 1758973578 1530 039e416cc1ae76d6f7a179acb3e9e984 ""
   "external.tex" 1758959422 1378 2020bbe350a4a31717d69d33631468fc ""
   "f:/Habib_University/FYP/kaavish-docs/ProposalTemplate/main.tex" 1758973437 19055 6be1ffb8d6904294b81a630674bd477f ""
-  "main.aux" 1758973441 1278 e6a9873d9ad37ebaa6cf554c396c707e "pdflatex"
-  "main.out" 1758973441 1179 1dfb13dc704fa5bdbd7197ebaaff7355 "pdflatex"
+  "main.aux" 1758973582 1278 e6a9873d9ad37ebaa6cf554c396c707e "pdflatex"
+  "main.out" 1758973582 1179 1dfb13dc704fa5bdbd7197ebaaff7355 "pdflatex"
   "main.tex" 1758973437 19055 6be1ffb8d6904294b81a630674bd477f ""
   (generated)
   "main.aux"
