@@ -7,6 +7,8 @@
 \usepackage{graphicx}
 \usepackage{soul}
 \usepackage{titling}
+\usepackage{url}
+\usepackage{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BEGIN METADATA: Edit the following as appropriate
@@ -15,12 +17,14 @@
 \title{Project Title}  % the title of your project
 \newcommand\shorttitle{\thetitle}  % if needed: a shorter title for the document header
 % Team members.
-\newcommand\firstname{Student 1}  % full name
-\newcommand\firstid{id01}         % ID, e.g. xy01234
-\newcommand\secondname{Student 2} % full name
-\newcommand\secondid{id02}        % ID, e.g. xy01234
-\newcommand\thirdname{Student 3}  % full name
-\newcommand\thirdid{id03}         % ID, e.g. xy01234
+\newcommand\firstname{Basil Ali Khan}  % full name
+\newcommand\firstid{bk08221}         % ID, e.g. xy01234
+\newcommand\secondname{Reyyan Saleem Ahmed} % full name
+\newcommand\secondid{ra08331}        % ID, e.g. xy01234
+\newcommand\thirdname{Taha Munawar}  % full name
+\newcommand\thirdid{tm08122}         % ID, e.g. xy01234
+\newcommand\fourthname{Turab Ahmed Usmani}  % full name
+\newcommand\fourthid{tu08125}         % ID, e.g. xy01234
 % Uncomment the rows for the next 2 students if and as needed.
 % \newcommand\fourthname{Student 4} % full name
 % \newcommand\fourthid{id04}        % ID, e.g. xy01234
@@ -51,32 +55,99 @@
 \section{Abstract}
 \instruction{Please write a 500-600 word abstract on the project idea. It should not be very technically written but should be understandable by anyone.}
 
-\section{Problem definition}
-\instruction{Describe the problem that the project addresses.}
+\section{Problem Definition}
 
-\section{Social relevance}
-\instruction{Describe any societal problem that the project addresses.}
+Modern payment switch systems form the backbone of digital financial infrastructure, enabling the processing of thousands of transactions per second across banks, payment gateways, and fintech platforms. Despite their critical importance, these systems are still heavily reliant on \textbf{manual monitoring and reactive incident management}. Operations teams sift through massive log files, performance dashboards, and alert streams to detect issues — a process that is slow, error-prone, and often incapable of preventing outages before they impact end-users.
 
-\section{Originality/Novelty}
-\instruction{Describe the value of solving the problem. Compare and contrast with any existing solutions.}
+The current reactive paradigm leads to several recurring challenges: delayed detection of anomalies, inconsistent incident resolution procedures, poor resource allocation during peak traffic, and overwhelming alert fatigue caused by false positives. Furthermore, due to the complex and heterogeneous nature of transaction ecosystems, root causes of failures can vary widely — from socket errors and queue saturation to asynchronous communication breakdowns triggered by seasonal traffic surges. Traditional static, rule-based systems cannot anticipate such variability and lack the adaptability to deal with novel or evolving failure modes.
 
-\section{CS contribution}
-\instruction{Describe the CS component of the project, e.g. the higher level CS courses that contribute to it.}
+This project proposes an \textbf{AI-powered operations (AIOps) agent} that can autonomously ingest and analyze system logs, detect anomalies, predict failures, correlate events, and trigger safe automated responses — significantly reducing downtime and operational overhead while increasing system reliability and resilience.
+
+\section{Social Relevance}
+
+Digital payment infrastructure is now a fundamental part of economic and social life. Millions of individuals and businesses rely on payment switch systems for transactions ranging from daily purchases and salaries to e-commerce and international remittances. System downtime, transaction delays, or outages in these infrastructures can cause widespread disruptions — affecting livelihoods, eroding public trust, and posing significant financial risks.
+
+By enabling \textbf{proactive monitoring, predictive analytics, and automated remediation}, our proposed AIOps agent addresses this societal challenge at its root. It ensures that financial systems remain stable, resilient, and available — especially during critical periods like salary disbursement days, holidays (e.g., Eid), or economic peaks. In doing so, it enhances \textbf{financial inclusion}, protects businesses and consumers from transaction failures, and contributes to a more reliable digital economy. The solution’s impact extends beyond financial services, benefiting any mission-critical digital infrastructure where uptime and trust are paramount.
+
+\section{Originality / Novelty}
+
+AIOps as a concept is gaining traction in industry, with commercial platforms like Moogsoft, Splunk, and Dynatrace offering automated monitoring and alert correlation. However, most existing solutions are either proprietary or generalized for IT operations without domain-specific adaptation. Moreover, they often stop at anomaly detection and do not extend into actionable remediation within complex, high-stakes environments like payment switch systems.
+
+From an academic and research perspective, foundational works such as \textit{DeepLog} (Du et al., 2017) demonstrated how unsupervised sequence models can detect anomalies in system logs, while \textit{Drain} (He et al., 2017) established effective log parsing techniques. Surveys like Landauer et al. (2023) highlight advances in deep learning for log analysis, but few efforts bridge the gap between anomaly detection, root cause correlation, and automated remediation in the financial domain.
+
+Our project is novel in several ways:
+\begin{itemize}
+    \item It applies advanced log analysis and anomaly detection techniques specifically to the \textbf{payment switch context}, which has unique traffic patterns, compliance constraints, and failure modes.
+    \item It integrates multiple layers — parsing, detection, prediction, correlation, and response — into a single end-to-end system rather than treating them as isolated tasks.
+    \item It introduces a \textbf{human-in-the-loop interface} to ensure safety and regulatory compliance while still allowing for significant operational autonomy.
+    \item It moves beyond static rule-based systems by leveraging machine learning to adapt to evolving failure signatures, unseen anomalies, and recurring seasonal patterns.
+\end{itemize}
+
+\section{CS Contribution}
+
+This project sits at the intersection of multiple advanced areas of computer science, integrating theory and practice from several upper-level courses and domains:
+\begin{itemize}
+    \item \textbf{Machine Learning and AI:} Unsupervised anomaly detection, predictive analytics, log pattern modeling, and natural language processing of log messages.
+    \item \textbf{Data Engineering:} High-throughput log ingestion, parsing pipelines, feature extraction, and streaming data processing.
+    \item \textbf{Systems and Infrastructure:} Integration with monitoring APIs, real-time alert systems, containerized deployment, and scaling.
+    \item \textbf{Software Engineering:} Full-stack design including backend services, APIs, and frontend dashboards for visualization and human interaction.
+    \item \textbf{Security and Reliability:} Implementation of safe automation policies, audit logging, and rollback mechanisms to ensure trustworthy operation.
+\end{itemize}
+
+By combining these areas, the project not only demonstrates strong CS rigor but also produces a practical, industry-ready solution to a complex real-world problem.
 
 \section{Scope and Deliverables}
-\instruction{Justify the scope of the project with respect to the size of the team and the year long duration. List the foreseeable deliverables.}
+
+Given a one-year timeline and a four-person team, the project scope is ambitious but feasible. We aim to build a fully functional AIOps platform with the following components:
+
+\begin{itemize}
+    \item \textbf{Log Ingestion and Parsing Engine:} Real-time ingestion of payment switch logs, automatic template extraction, and semantic interpretation.
+    \item \textbf{Anomaly Detection and Predictive Analytics:} Unsupervised models to learn normal behavior and identify deviations, plus forecasting of potential failures.
+    \item \textbf{Alert Correlation and Prioritization:} Noise reduction, clustering of related alerts, and severity-based ranking.
+    \item \textbf{Automated Remediation Layer:} Safe autonomous actions such as service restarts, resource scaling, and parameter tuning based on learned patterns.
+    \item \textbf{Human-in-the-Loop Interface:} Dashboard for real-time monitoring, context-rich alerts, recommended actions, and manual override options.
+    \item \textbf{Visualization and Analytics Dashboard:} Historical analysis, system health metrics, and trend reporting for decision support.
+\end{itemize}
+
+This multi-layered design ensures a balance between innovation and deliverability. Each layer can be incrementally developed and validated, with measurable milestones across the two semesters.
 
 \section{Feasibility}
-\instruction{List the resources, e.g. datasets, compute resources, software libraries, hardware, required for the project. Mention how you expect to access and utilize them for the project.}
 
-\section{Team dynamics}
-\instruction{Justify the suitability of the team members to the project. For example, their relevant courses, projects, internships, or research.}
+The project is technically and logistically feasible within the given timeframe. Key resources and strategies include:
 
-\section{Tech stack}
-\instruction{Write details of the tech stack you will use for this project for e.g. if you are using MERN stack, you can write MongoDB, Express, React and NodeJS etc.}
+\begin{itemize}
+    \item \textbf{Data:} TPS will provide anonymized operational logs, enabling model training and validation without breaching confidentiality. Supplementary datasets such as LogHub will be used for pretraining and benchmarking.
+    \item \textbf{Compute Resources:} Model development and training will be conducted on cloud GPUs via platforms like Kaggle and Google Colab, ensuring sufficient computational capacity.
+    \item \textbf{Software Libraries:} State-of-the-art ML and data processing libraries (PyTorch, scikit-learn, spaCy, Pandas) and infrastructure tools (Kafka, Prometheus, Grafana) will support scalable development.
+    \item \textbf{Evaluation and Testing:} Both offline evaluation (precision, recall, F1-score, false-positive rate) and online performance testing (latency, throughput, MTTD, MTTR) will be conducted.
+\end{itemize}
+
+These resources are readily accessible, and the team has prior experience with the necessary tools and workflows.
+
+\section{Team Dynamics}
+
+[To be filled by team — describe how each member’s skills, internships, and coursework align with their assigned responsibilities.]
+
+\section{Tech Stack}
+
+\textbf{Backend:} Python (FastAPI/Flask), Apache Kafka, Elasticsearch, PostgreSQL  
+\textbf{AI/ML:} PyTorch, TensorFlow, scikit-learn, NLTK, spaCy  
+\textbf{Frontend:} React.js, D3.js, Chart.js  
+\textbf{Infrastructure:} Docker, Kubernetes, Prometheus, Grafana  
+
+This stack is designed to support scalable, real-time data processing, model deployment, and intuitive user interaction.
 
 \section{References}
-\instruction{List your references.}
+
+\begin{enumerate}
+    \item M. Du, et al., ``DeepLog: Anomaly Detection and Diagnosis from System Logs using Deep Learning,'' \textit{ACM CCS}, 2017. DOI: \href{https://doi.org/10.1145/3133956.3134015}{10.1145/3133956.3134015}
+    \item P. He, et al., ``Drain: An Online Log Parsing Approach with Fixed Depth Tree,'' \textit{IEEE ICWS}, 2017. DOI: \href{https://doi.org/10.1109/ICWS.2017.27}{10.1109/ICWS.2017.27}
+    \item J. Zhu, et al., ``LogHub: A Large Collection of System Log Datasets for AI-Driven Log Analytics,'' \textit{IEEE ISSRE Workshops}, 2020. DOI: \href{https://doi.org/10.1109/ISSREW51248.2020.00119}{10.1109/ISSREW51248.2020.00119}
+    \item M. Landauer, et al., ``Deep Learning for Anomaly Detection in Log Data: A Survey,'' arXiv:2302.04011, 2023. 
+    \item Z. A. Khan, et al., ``Impact of Log Parsing on Deep Learning-Based Anomaly Detection,'' \textit{IEEE TDSC}, 2022. DOI: \href{https://doi.org/10.1109/TDSC.2022.3148980}{10.1109/TDSC.2022.3148980}
+    \item ``AIOps Solutions for Incident Management: Technical Guidelines and Practices,'' arXiv:2401.05720, 2024.
+\end{enumerate}
+
 
 % External advisor undertaking.
 \input{external}
